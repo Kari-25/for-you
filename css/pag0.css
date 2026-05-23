@@ -1,0 +1,237 @@
+/* ==========================================
+   🌟 ESTILOS GENERALES Y FONDO (LISTO PARA CALAVERA)
+========================================== */
+body{
+    background-image: url(../imagenes/index/fondo.png); /* 📌 AQUÍ PONES TU IMAGEN DE CALAVERA */
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    
+    /* 🎨 FILTROS MEJORADOS PARA FONDO OSCURO: Hace que la calavera se vea épica */
+    filter: brightness(0.7) contrast(1.4) saturate(1.2); /* Más oscuridad y contraste */
+
+    margin: 0;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==========================================
+   ✨ TÍTULOS Y TEXTO PRINCIPAL (MÁS BRILLO)
+========================================== */
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-size: 50px;
+    letter-spacing: 2px;
+    /* ✨ BRILLO MÁS FUERTE PARA QUE CORTE EL OSCURO */
+    text-shadow: 0 0 10px #00f0ff, 
+                 0 0 20px #00f0ff, 
+                 0 0 30px #0088ff, 
+                 0 0 40px #00ffff,
+                 2px 2px 4px rgba(0,0,0,1);
+    width: 100%;
+    margin: 15px 0;
+    animation: latido 2.5s infinite ease-in-out;
+}
+
+p {
+    text-align: center;
+    color: rgb(48, 209, 12);
+    font-size: 30px;
+    width: 100%;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 8px rgba(0,0,0,1), 0 0 5px rgba(0, 240, 255, 0.5);
+    font-style: italic;
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+/* ==========================================
+   📦 ESTILOS DE LAS CAJAS
+========================================== */
+#div1, #div2, #div3, #div4 {
+    background-image: url(../imagenes/index/divs.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    
+    width: 26%;
+    height: 230px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 15px;
+    
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    
+    /* 🌑 SOMBRA MÁS MARCADA PARA DESTACAR SOBRE LA CALAVERA */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.6), 
+                inset 0 0 10px rgba(0, 255, 255, 0.08);
+}
+
+#div1, #div3 { clear: left; margin-left: 10%; }
+#div2, #div4 { clear: right; margin-right: 10%; }
+
+#div1::after, #div2::after, #div3::after, #div4::after {
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: -100%;
+    width: 300%;
+    height: 300%;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 240, 255, 0.15) 50%, /* Más visible */
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: rotate(25deg);
+    transition: all 0.6s ease;
+}
+
+/* 🎇 HOVER BRUTAL */
+#div1:hover, #div2:hover, #div3:hover, #div4:hover {
+    transform: translateY(-12px) scale(1.07);
+    /* ✨ BRILLO AZUL ELÉCTRICO FUERTE */
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.6), 
+                0 0 30px rgba(0, 240, 255, 0.9), 
+                0 0 60px rgba(0, 136, 255, 0.6),
+                0 0 90px rgba(0, 255, 255, 0.2),
+                inset 0 0 15px rgba(255, 255, 255, 0.2);
+    filter: brightness(1.5) saturate(2);
+}
+#div1:hover::after, #div2:hover::after, #div3:hover::after, #div4:hover::after { top: 100%; left: 100%; }
+
+/* ==========================================
+   🖼️ IMÁGENES / LOGOS
+========================================== */
+#div1 img, #div2 img, #div3 img, #div4 img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 12px auto;
+    transition: all 0.4s ease;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.8)); /* Sombra negra fuerte */
+}
+
+#div1:hover img, #div2:hover img, #div3:hover img, #div4:hover img {
+    transform: scale(1.3) rotate(8deg);
+    filter: drop-shadow(0 0 10px #ffffff) 
+            drop-shadow(0 0 25px #00f0ff) 
+            drop-shadow(0 0 40px #0088ff) 
+            brightness(1.8);
+}
+
+/* ==========================================
+   📝 TEXTOS Y ENLACES
+========================================== */
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+h2 {
+    font-size: 15px;
+    margin: 0;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #00f0ff;
+    text-shadow: 0 0 8px rgba(0, 240, 255, 1), 0 0 15px rgba(0, 240, 255, 0.7), 1px 1px 2px rgba(0,0,0,1);
+    transition: all 0.3s ease;
+}
+
+#div1:hover h2, #div2:hover h2, #div3:hover h2, #div4:hover h2 {
+    color: #ffcc00;
+    text-shadow: 0 0 12px rgba(255, 204, 0, 1), 0 0 25px rgba(255, 136, 0, 0.9);
+    transform: scale(1.1);
+}
+
+a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 6px 18px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #0088ff, #00f0ff);
+    border: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 136, 255, 0.6), inset 0 0 5px rgba(255,255,255,0.3);
+}
+
+a:hover {
+    transform: scale(1.15) translateY(-3px);
+    background: linear-gradient(45deg, #ff0080, #ffcc00);
+    box-shadow: 0 6px 15px rgba(255, 0, 128, 0.7), 
+                0 0 20px rgba(255, 204, 0, 0.7);
+    color: #fff;
+}
+
+/* ==========================================
+   💖 IMAGEN PANSY (LA REINA DEL CENTRO)
+   💥 AHORA BRILLA CONTRA LA CALAVERA
+========================================== */
+#pansy {
+    position: fixed; 
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%); 
+    width: 220px;
+    height: auto;
+    z-index: 10; 
+    opacity: 0.9; /* Más visible */
+    pointer-events: none;
+    transition: all 0.5s ease;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.8));
+    
+    /* 💓 ANIMACIÓN: Flota y cambia colores entre AZUL - ROSA - BLANCO */
+    animation: flotar 4s infinite alternate ease-in-out, 
+               brillarColores 6s infinite ease-in-out;
+}
+
+@keyframes flotar {
+    0% { transform: translate(-50%, -50%) translateY(-10px) rotate(-1deg); }
+    100% { transform: translate(-50%, -50%) translateY(10px) rotate(1deg); }
+}
+
+@keyframes brillarColores {
+    0% { filter: drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 40px #00f0ff); }
+    33% { filter: drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 40px #ff00ff); }
+    66% { filter: drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 40px #ffcc00); }
+    100% { filter: drop-shadow(0 0 20px #ffffff) drop-shadow(0 0 40px #00f0ff); }
+}
+
+body:hover #pansy {
+    width: 240px;
+    filter: drop-shadow(0 0 30px #ffffff) 
+            drop-shadow(0 0 60px #ff00ff) 
+            drop-shadow(0 0 90px #00f0ff) 
+            brightness(1.3);
+}
+
+#div1, #div2, #div3, #div4 { position: relative; z-index: 5; }
